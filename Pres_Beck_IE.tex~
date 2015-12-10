@@ -1,0 +1,539 @@
+\documentclass[11pt,final,hyperref={pdfpagelabels=false}]{beamer}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath,amsthm,amssymb,latexsym}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{natbib}
+\usepackage{multicol}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pour éviter le bug 'rmfamily invalid in math mode' apparemment causé par gb4e
+% \makeatletter
+% \def\***@fontshape{}
+% \makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{gb4e}%Fuckin' gb4e always at the end
+
+
+%Newcommands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\reff}[1]{(\ref{#1})}
+\newcommand{\valsem}[2][]{$\llbracket$#2$\rrbracket^{#1}$}
+\newcommand{\tuple}[1]{\ensuremath{ \left \langle #1 \right \rangle }}
+\newcommand{\exs}[2][1]{\begin{exe}\ex\label{#1} \begin{xlist}#2\end{xlist}\end{exe}}
+\newcommand{\types}[1]{\ensuremath{ \left \langle \texttt{#1} \right \rangle }}
+\newcommand{\rmsc}[1]{\text{\textsc{#1}}}
+\newcommand{\rmbf}[1]{\text{\textbf{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Pour avoir des frametitles du nom de la section et numérotées
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{framesecnum}
+
+\newcommand\framesecnum{%
+    \frametitle{\refstepcounter{framesecnum}~\insertsection~({\Roman{framesecnum}})}
+}
+\resetcounteronoverlays{framesecnum}
+
+\AtBeginSection{\setcounter{framesecnum}{1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Theme related
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{navigation symbols}{\usebeamerfont{footline}%
+    \usebeamercolor[fg]{black}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber}
+
+% \usefonttheme{default}
+\resetcounteronoverlays{exx}
+
+\setbeamercolor{blocktitle}{bg=red,fg=red}
+\useinnertheme[shadow=true]{rounded}
+\usecolortheme{whale}
+\useoutertheme[height=20pt]{sidebar}
+\setbeamercolor{frametitle}{fg=white}
+
+%Itemize labels (enumitem package)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlist[itemize]{label={$\bullet$}}
+\setlist[itemize,2]{label={--}}
+\setlist[itemize,3]{label={$\star$}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ 
+\title[S. Beck - Intervention Effects]{\large Sigrid \raisebox{-.45\height}{\includegraphics[scale=0.027]{becks.png}} paper\\\emph{Intervention Effects Follow from Beer Interpretation} (2006)}
+\author{Karoliina Lohiniva, Lucas Tual\\University of Geneva}
+\date{December 10, 2015}
+
+
+\begin{document}
+\begin{frame}
+\maketitle
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}
+    \frametitle{Outline}
+    \tableofcontents
+\end{frame}
+
+
+\begin{frame}{Introduction}
+\begin{itemize}
+\item Intervention effects in wh-questions are due to semantic uninterpretability
+\item This semantic uninterpretability is due to the semantics of wh-expressions (their lack of ordinary semantic value) 
+    \begin{itemize}
+    \item In intervention configurations, Q is separated from the wh-expression by an intervening focus OP and cannot evaluate it
+    \item The resetting of the focus semantic value to the ordinary semantic value by the focus OP will lead to an undefined semantic value
+    \item The undefinedness percolates through the whole structure 
+    \end{itemize}
+\item (Semantic) focus interpretation is argued to be the correlate of (syntactic) feature movement (Pesetsky 2000)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}\framesecnum
+\begin{itemize}
+\item In general: a wh-phrase in situ may not be c-commanded by a focusing or quantificational element
+	\begin{itemize}
+	\item More specifically: the binder of a wh-phrase in situ (Q) must not be outside the scope of a focus-sensitive operator:
+	    \begin{itemize}
+	    \item OP $>$ Q $>$ wh
+	    \item *Q $>$ OP $>$ wh
+	    \end{itemize}
+	\end{itemize}
+\item In general: tension between universality and variation
+	\begin{itemize}
+	\item Universality of the phenomenon
+	\item Parameters of variation
+		\begin{itemize}
+		\item Syntactic configurations where intervention effects arise
+		\item The set of problematic intervenors
+		\item The set of wh-expressions sensitive to intervention
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\subsection{Some examples}
+\begin{frame}{Some examples}
+
+\begin{itemize}
+\item In English, intervention effects only appear in multiple wh-questions that avoid superiority effects
+\end{itemize}
+
+	\begin{exe}
+  	 \ex Pesetsky 2000
+   		\begin{xlist}
+		\ex {\footnotesize{Which girl did only Mary introduce which girl to \_ ?}}
+		\ex[??]{\footnotesize{Which boy did only Mary introduce which girl to \_ ?}}
+   		\end{xlist}
+   	\end{exe}
+   	
+\begin{itemize}
+\item In English, but not in Thai, negation is an intervener
+\end{itemize}
+    \begin{exe}
+	\ex Pesetsky 2000 (English), Ruangjaroon 2002 (Thai)
+		\begin{xlist}
+		\ex[??]{\footnotesize{Which diplomat should I not discuss which issue with \_ ?}}
+		\ex {\footnotesize{\gll Nit may sii ?aray\\
+		Nit not buy what \\
+		`What didn't Nit buy?'}}
+		\end{xlist}
+		\end{exe}
+   
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}\framesecnum 
+\begin{itemize}
+\item In Mandarin, who/what are sensitive to intervention, while which-phrases are not
+\end{itemize}
+	\begin{exe}
+ 
+	\ex Beck 2006 (Mandarin) (Soh 2001)
+		\begin{xlist}
+		\ex[\%]{\gll zhiyou Lili kan-le shenme? \\
+		only Lili read-Asp what\\
+		}
+		\ex[?*]{\gll zhiyou Lili kan-le na-ben shu? \\
+		only Lili read-Asp which-CL book\\
+		}
+		\end{xlist}
+	\end{exe}
+   
+\end{frame}
+
+\begin{frame}{Universal interveners}
+Core interveners, that are crosslinguistically stable, are \emph{only}, \emph{even} and \emph{also} KIM A CITER.
+\end{frame}
+
+
+%%Karo
+
+
+%%Lucas
+\section{The Theory of Focus Interpretation}
+\begin{frame}{The Theory of Focus Interpretation}
+A theory for the interpretation of focus was developed by \cite{Roo85,Roo92}. Beck uses a variant of Rooth's account, that was developed by \cite{Kra91} and \cite{Wol96}.
+
+According to Rooth, a constituent marked by focus will generate a set of alternatives to that constituent.
+
+\begin{exe}
+  \ex\label{focexample} John introduced Sue_F to Bill.
+\end{exe}
+
+The set of alternative propositions for the sentence in \reff{focexample} will be the following:
+
+\begin{exe}
+  \ex {\small{$\{\lambda{w_s}.~[\text{John introduced $x$ to Bill in $w$}] : x \in D_e\}$}}
+\end{exe}
+
+\emph{Only} is a focus sensitive operator that uses the set of alternatives.
+\end{frame}
+
+\begin{frame}\framesecnum
+\begin{exe}
+  \ex \enquote{\emph{only} $\phi$} is true only if given any true proposition in the set of alternatives to $\phi$, that proposition equals the proposition expressed by $\phi$.
+\end{exe}
+
+Thus, the sentence containing \emph{only} in \reff{sentonly} is true only if for any true proposition $\lambda{w_s}.~[\text{John introduced $x$ to Bill in $w$}]$\\ in the set of alternatives generated by the focus constituent, that proposition equals $\lambda{w^\prime_s}.~[\text{John introduced Sue to Bill in $w^\prime$}]$
+
+\begin{exe}
+  \ex\label{sentonly} John only introduced Sue_F to Bill.
+\end{exe}
+
+\begin{block}{Question}
+How to derive the set of alternatives compositionally?  
+\end{block}
+
+  
+\end{frame}
+
+\begin{frame}\framesecnum
+\cite{Kra91}'s version of Rooth's theory makes use of assignment variables. $g$ is the ordinary variable assignment. The semantic value of a logical form $\alpha$ is relativized to an assignment function $g$: \valsem[g]{$\alpha$}. One of the roles of $g$ is to assign a value to the index on a pronoun.
+
+\begin{exe}
+  \ex \valsem[g]{he_j} $=$ $g(j)$\\[0.2cm]
+      \valsem[g]{He loves Bill} $=$ $\lambda{w_s}.~[g(j) \text{ loves Bill in }w]$
+\end{exe}
+
+Focus Features $F$ bear an index. Another assignment variable, distinguished from $g$, is needed. Assignment $h$ to focus variables $\Rightarrow$ $h$ may be applied only to indices on foci.
+\end{frame}
+
+\begin{frame}\framesecnum{}
+Relativization of the semantic value of a focused element $\alpha_{F_{i}}$ to a focus variable assignment $h$ produces an alternative $h(i)$.
+
+If $\alpha_{F_{i}}$ is not relativized to an alternative assignment, $F_i$ is semantically inert.
+\begin{exe}
+  \ex {\small{Semantics of the Focus Feature $F_i$:}}
+            \begin{xlist}
+                \ex {\small{\valsem[g,h]{$\alpha_{F_{i}}$} defined iff $i \notin$ Dom($g$) \& $i \in$ Dom($h$)\\
+                    \valsem[g,h]{$\alpha_{F_{i}}$} $=$ $h(i)$}}
+                \ex {\small{\valsem[g]{$\alpha_{F_{i}}$} defined iff $i \notin$ Dom($g$)\\
+                    \valsem[g]{$\alpha_{F_{i}}$} $=$ \valsem[g]{$\alpha$}}}
+            \end{xlist}
+  \ex The set of alternatives to $\phi$ is:\\
+      $\{\text{\valsem[g,h]{$\phi$}} : h \in H\}$\\
+      where $H$ is the set of focus variable assignments.
+\end{exe}
+\end{frame}
+
+\begin{frame}\framesecnum{}
+According to Beck, the contribution of focus can be evaluated by two focus-sensitive operators: either the squiggle $\sim$, or the question operator $Q$.
+
+The squiggle operator \citep{Roo92}: $\sim$
+
+This operator defines at which syntactic level the focus should be interpreted, and has two semantic contributions:
+  \begin{itemize}
+    \item to semantically evaluate all foci in its scope unselectively,
+    \item and to neutralize the contribution of these foci by resetting the focus semantic value of the sister of $\sim$ to its ordinary semantic value.
+  \end{itemize} 
+\end{frame}
+
+\begin{frame}\framesecnum{}
+Let's see the semantics behind the sentence in \reff{onlyexample}, whose LF is \reff{onlyexampleLF}. The variable $C$ is a focus anaphor, that will be used both by \enquote{\emph{only}} and the squiggle operator.
+\begin{exe}
+  \ex 
+    \begin{xlist}
+      \ex\label{onlyexample} Only JOHN left.
+      \ex\label{onlyexampleLF} \lb{} only $C$ \lb{} \lb{} $\sim$ $C$ \rb{} \lb{} John$_{F_{i}}$ left \rb{} \rb{} \rb{}
+    \end{xlist}
+  \ex If $X = \lb{} \lb{} \hspace{-1.2ex} \sim C\rb{} Y \rb{}$, then
+    \begin{xlist}
+      \ex \valsem[g]{$X$} $=$ \valsem[g]{$Y$} if $g(C) \subseteq \{$\valsem[g,h^\prime]{Y}$ : h^\prime \in H~\&~h^\prime \text{ is total}\}$, undefined otherwise;
+      \ex \valsem[g,h]{$X$} $=$ \valsem[g]{$X$}
+    \end{xlist}
+  \ex \valsem{only}$(\alpha)(\beta)(w)$ $=$ 1\\[0.2cm]
+      iff $\forall{p}[~[p(w) = 1 \wedge p \in \alpha] \rightarrow p = \beta]$
+\end{exe}
+\end{frame}
+
+\begin{frame}\framesecnum
+Composition of the sentence \enquote{\emph{Only JOHN left}}:
+\begin{exe}
+  \ex 
+    \begin{xlist}
+        \ex \valsem[g]{only} $(g(C))$ $(\lambda{w_s}.~\text{john left in }w)$ $(w)$ $=$ 1 iff
+        \ex $\forall{p}[~[p(w) = 1 \wedge p \in g(C)] \rightarrow p = \lambda{w_s}.~\text{john left in } w ]$\\
+        ~~~~ if $g(C) \subseteq \{\lambda{w_s}.~x \text{ left in } w : x \in D_e\}$
+        \ex $\forall{p}[~[p(w) = 1 \wedge p \in \{\lambda{w_s}.~x \text{ left in } w : x \in D\}] \rightarrow p = \lambda{w_s}.~\text{john left in } w]$
+    \end{xlist}
+\end{exe}
+  
+\end{frame}
+
+
+
+%%Lucas
+\begin{frame}{Beck's analysis}
+\begin{block}{\normalsize Beck's analysis (informal)}
+{\footnotesize{Focused phrases make two semantic contributions:}}
+    \begin{itemize}
+      \footnotesize \item their ordinary semantic value
+      \item a set of alternatives of the same type of the ordinary semantic value
+    \end{itemize}
+{\footnotesize{\emph{wh-} phrases also introduce a set of alternatives, but \emph{they don't have an ordinary semantic value}. Since the ordinary semantic value of a \emph{wh-} phrase is undefined, the role of the question operator $Q$ is to ignore the ordinary semantic value of his sister and to elevate its focus semantic value to an ordinary semantic value.}}
+  
+{\footnotesize{Things go wrong when the question contains a focus-sensitive operator in the scope of the $Q$ operator, which will try to evaluate the focus on the \emph{wh-} phrase. The problem is that the focus-sensitive operator resets the focus semantic value of its sister to its ordinary semantic value. The $Q$ operator won't have access to the focus semantic value introduced by the \emph{wh-} phrase, and then the whole sentence will be undefined.}}
+\end{block}
+\end{frame}
+
+\begin{frame}\framesecnum
+Strong correlation between focus and questions.
+
+\begin{exe}
+  \ex Focus
+    \begin{xlist}
+      \ex \lb{} \hspace{-1.4ex} John left\rb{F}.
+      \ex Set of alternatives generated by focus:\\
+          {\footnotesize{\{that John left, that Mary left, that Paul left, \ldots \}}}\\
+          $\lambda{p_{\tuple{s,t}}}.~\exists{x}[p = \lambda{w_s}.~x \text{ left in } w]$
+    \end{xlist}
+  \ex Questions
+    \begin{xlist}
+      \ex Who left?
+      \ex {\footnotesize{\{that John left, that Mary left, that Paul left, \ldots \}}}\\
+          $\lambda{p_{\tuple{s,t}}}.~\exists{x}[p = \lambda{w_s}.~x \text{ left in } w]$
+    \end{xlist}
+\end{exe}
+
+The focus semantic value of the sentence \enquote{John_F left} is exactly the same as the ordinary semantic value of the question \enquote{Who left?}.
+\end{frame}
+
+\begin{frame}\framesecnum
+Beck proposes that a \emph{wh-} phrase does not have an ordinary semantic value, but only a focus semantic value (a set of alternatives of the same type of the ordinary semantic value).
+\begin{exe}
+  \ex
+    \begin{xlist}
+      \ex \valsem[g]{who_1} is undefined.
+      \ex \valsem[g,h]{who_1} $= h(1)$
+    \end{xlist}
+  \ex
+    \begin{xlist}
+      \ex \valsem[g]{who_1 left} is undefined.
+      \ex \valsem[g,h]{who_1} left $= \lambda{w_s}.~ h(1) \text{ left in } w$
+    \end{xlist}
+\end{exe}
+
+Now we can introduce the second focus-sensitive operator besides $\sim$: the $Q$ operator. It is a variable binder that binds variables interpreted by $h$.
+\end{frame}
+
+\begin{frame}\framesecnum
+\begin{exe}
+    \ex
+        \begin{xlist}
+            \ex Who left?
+            \ex \lb{} $Q_1$ \lb{} who_1 left \rb{} \rb{}
+        \end{xlist}
+    
+\end{exe}
+\end{frame}
+
+\begin{frame}\framesecnum
+
+\begin{exe}
+    \ex \emph{Principle of Interpretability:}\\
+        An LF must have an ordinary semantic interpretation
+\end{exe}
+
+\begin{exe}
+  \ex \emph{General Minimality Effect}:\\
+      The evaluation of alternatives introduced by an XP cannot skip an intervening $\sim$ operator.\\
+      * [ $Op_1$ \ldots [ $\sim C$ \lb{\phi} \ldots{} XP_1 \ldots \rb{}] ]
+\end{exe}
+\end{frame}
+
+
+
+
+
+\section{Pesetsky}
+\begin{frame}{Wh-movement in Pesetsky 2000}
+
+\begin{itemize}
+\item Pesetsky (2000) argues that wh-movement can involve
+    \begin{itemize}
+    	\item overt or covert phrasal movement\\
+	$\Rightarrow$ signaled by superiority effects
+	
+    \item feature movement \\
+	$\Rightarrow$ signaled by absence of superiority effects
+    \end{itemize}
+\item ACD data?
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Types of movement and intervention}
+
+\begin{itemize}
+\item Beck argues that focus interpretation is the "interpretational strategy that underlies the term feature movement"
+    \begin{itemize}
+    \item superiority effects $\Rightarrow$ phrasal movement $\Rightarrow$ no intervention effects
+    \item no superiority effects $\Rightarrow$ feature movement $\Rightarrow$ intervention effects
+    \end{itemize}
+\item The relevant data comes from English intervention effects that only show up in otherwise permissible superiority violations (Pesetsky 2000)
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Phrasal movement: no intervention}
+
+	\begin{exe}
+		\ex Who did John introduce to whom? \\
+		{\footnotesize{Q_{1,2} [who_{1} [4 [whom_{2} [5 [did [John introduce t4 to t5 ]]]]]]}}
+		\ex\label{a} Who did only John introduce to whom? \\
+		{\scriptsize{Q_{1,2} [who_{1} [4 [whom_{2} [5 [did [_{X} only_{C} [$\sim$C [John_{F3} introduce t4 to t5 ]]]]]]]]}}
+	\end{exe}
+	
+The in-situ wh-phrase moves covertly, as shown by superiority. This means that it is interpreted outside the scope of $\sim$\\ $\Rightarrow$ \textbf{No intervention}
+\end{frame}
+
+
+\begin{frame}{Feature movement: intervention}
+
+	\begin{exe}
+		\ex Which boy did Mary introduce which girl to \_ ? \\
+		{\footnotesize{Q_{1,2} [ [which boy]_{1} [4 [did [Mary introduce [which girl]_{2} to t4 ]]]]]]}}
+		\ex[??]{Which boy did only Mary introduce which girl to \_ ?}\\
+		{\scriptsize{Q_{1,2} [ [which boy]_{1} [4 [did [_{X} only_{C} [$\sim$C [Mary_{F3} introduce [which girl]_{2} to t4 ]]]]]]}}
+	\end{exe}
+
+The in-situ wh-phrase does not move overtly or covertly \textbf{at LF}, as shown by the lack of superiority effects. This means that it is interpreted inside the scope of $\sim$.\\ $\Rightarrow$ \textbf{Intervention}
+\end{frame}
+
+\begin{frame}{Focus interpretation = feature movement?}
+
+Beck: "[focus interpretation] is an interpretation of the notion of feature movement as used by Pesetsky", "a semantic reconstruction of the use that feature movement is put to by Pesetsky"
+
+\begin{itemize}
+\item If the focus intervention account is right, focus intervention is the consequence of feature movement
+\item When only the wh-feature moves, the wh-expression is evaluated by $\sim$ and undefinedness follows
+\item When the wh-expression itself moves, semantic composition is not disrupted
+\end{itemize}
+
+
+\end{frame}
+
+
+%%karo
+\section{Predictions}
+\begin{frame}{Predictions}
+\begin{itemize}
+\item Japanese, Korean, German...
+    \begin{itemize}
+    \item no superiority $\Rightarrow$ no phrasal movement available $\Rightarrow$ feature movement $\Rightarrow$ generalised intervention effects
+    \end{itemize}
+\item English, ...
+    \begin{itemize}
+    \item superiority $\Rightarrow$ phrasal movement available $\Rightarrow$ limited intervention effects
+    \end{itemize}
+\item Intervention when $\sim$ is present 
+\end{itemize}
+\end{frame}
+
+
+\section[Conclusion]{Conclusion and Open Issues}
+\begin{frame}{Conclusion and Open Issues}
+  FRENCH!!
+  
+ {\small{ 
+ \textbf{Dialogue 1:}\\
+A: Jean devait voir plusieurs personnes aujourd'hui, qu'est-ce qu'il en est?\\
+B: Je crois qu'il n'a pas eu le temps de voir tout le monde. Je crois qu'il a vu une personne et après il était débordé.\\
+A: Dis moi, au final, Jean a vu seulement qui?
+
+
+\textbf{Dialogue 2:}\\
+A: C'était compliqué d'organiser la fête chez moi! Je ne pouvais pas inviter tout le monde, et j'ai eu du mal à choisir les gens que je n'allais pas inviter. Mais maintenant c'est réglé!\\
+B: Alors au final, t'as pas invité qui?
+
+
+\textbf{Dialogue 3:}\\
+A: Pour la fête qu'il organise chez lui, Jean est complètement fou! Il a invité beaucoup de monde, il a même invité des gens très bizarres...\\
+B: Ah, il a même invité qui par exemple?}}
+
+\end{frame}
+
+
+
+\begin{frame}{(Featural) Relativized Minimality}
+Rizzi 1990, 2013
+\vspace{1em}
+
+[X...Y...Z] 
+
+\begin{exe}
+\ex X and Y cannot be connected by movement if 
+    \begin{xlist}
+    \ex Z c-commands Y
+    \ex Z is of the same structural type as X
+    \end{xlist}
+\end{exe}
+
+\begin{exe}
+\ex Structural type in terms of formal features
+    \begin{xlist}
+    \ex disjunction: X_{A}...Y_{B}...Z_{A}
+    \ex inclusion: X_{A,B}...Y_{A}...Z_{A,B}
+    \ex identity: X_{A}...Y_{A}...Z_{A}
+    \end{xlist}
+\end{exe}
+\end{frame}
+
+
+\begin{frame}{D-linking, RM and focus interpretation}
+\ex
+
+\end{frame}
+
+
+
+\begin{frame}{References}
+  \begin{scriptsize}
+   \bibliography{presbeckbib}
+  \end{scriptsize}
+  \bibliographystyle{apalike}
+  \nocite{*}
+\end{frame}
+
+\end{document}
